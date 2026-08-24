@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>TRIMERS — Barbing Salon</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+      line-height: 1.6;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid #252525;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 3px;
+    }
+
+    .logo span {
+      color: #d4af37;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      min-height: 90vh;
+      padding: 100px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
+    }
+
+    .small {
+      color: #d4af37;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: clamp(55px, 10vw, 100px);
+      line-height: .9;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      color: #ddd;
+      max-width: 550px;
+      margin-bottom: 30px;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      margin-right: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .gold {
+      background: #d4af37;
+      color: #080808;
+    }
+
+    .outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .title {
+      margin-bottom: 40px;
+    }
+
+    .title p {
+      color: #d4af37;
+      letter-spacing: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .title h2 {
+      font-size: 50px;
+      line-height: 1;
+      margin-top: 10px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: #151515;
+      border: 1px solid #292929;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .card p {
+      color: #999;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      color: #d4af37;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .gallery {
+      background: #111;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 7px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-text {
+      color: #aaa;
+      max-width: 650px;
+    }
+
+    .number {
+      border: 1px solid #333;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .number strong {
+      display: block;
+      color: #d4af37;
+      font-size: 50px;
+    }
+
+    .contact {
+      background: #111;
+      text-align: center;
+    }
+
+    .contact p {
+      color: #aaa;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    footer {
+      padding: 30px 7%;
+      border-top: 1px solid #252525;
+      color: #777;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 18px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding: 80px 6%;
+      }
+
+      section {
+        padding: 70px 6%;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery img {
+        height: 200px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .title h2 {
+        font-size: 40px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      TRIMERS<span>.</span>
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+
+      <div class="small">BARBER SHOP DEMO</div>
+
+      <h1>
+        Sharp cuts.<br>
+        <span>Clean style.</span>
+      </h1>
+
+      <p>
+        A modern barbershop experience built around
+        precision, style and confidence.
+      </p>
+
+      <a href="#contact" class="btn gold">
+        Book a Cut
+      </a>
+
+      <a href="#services" class="btn outline">
+        Services
+      </a>
+
+    </div>
+  </section>
+
+
+  <section id="services">
+
+    <div class="title">
+      <p>WHAT WE OFFER</p>
+      <h2>Our Services</h2>
+    </div>
+
+    <div class="services">
+
+      <div class="card">
+        <h3>Classic Haircut</h3>
+        <p>
+          A clean and professional haircut
+          tailored to your style.
+        </p>
+        <div class="price">₦3,000</div>
+      </div>
+
+      <div class="card">
+        <h3>Haircut + Beard</h3>
+        <p>
+          Complete grooming with a sharp
+          beard finish.
+        </p>
+        <div class="price">₦4,500</div>
+      </div>
+
+      <div class="card">
+        <h3>Premium Package</h3>
+        <p>
+          Haircut, beard styling and complete
+          finishing.
+        </p>
+        <div class="price">₦6,000</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section class="gallery" id="gallery">
+
+    <div class="title">
+      <p>OUR WORK</p>
+      <h2>Fresh Every Time.</h2>
+    </div>
+
+    <div class="gallery-grid">
+
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0e4f1f5a?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1622288432450-277d0c8b8f7d?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1593702288056-792e2d5c7f2c?auto=format&fit=crop&w=800&q=80">
+
+      <img src="https://images.unsplash.com/photo-1622296089863-eb7fc4b3b8b4?auto=format&fit=crop&w=800&q=80">
+
+    </div>
+
+  </section>
+
+
+  <section class="about" id="about">
+
+    <div>
+
+      <div class="title">
+        <p>ABOUT</p>
+        <h2>Your style.<br>Your confidence.</h2>
+      </div>
+
+      <p class="about-text">
+        This is a demonstration website concept showing
+        how a modern barbershop could present its services,
+        work and contact information online.
+      </p>
+
+    </div>
+
+    <div class="number">
+      <strong>100%</strong>
+      Style focused
+    </div>
+
+  </section>
+
+
+  <section class="contact" id="contact">
+
+    <div class="title">
+      <p>BOOK YOUR VISIT</p>
+      <h2>Ready for a fresh cut?</h2>
+    </div>
+
+    <p>
+      Contact the barbershop to confirm availability,
+      pricing and appointment details.
+    </p>
+
+    <a
+      class="btn gold"
+      href="https://wa.me/2340000000000"
+      target="_blank"
+    >
+      WhatsApp Us
+    </a>
+
+  </section>
+
+
+  <footer>
+
+    <div class="logo">
+      TRIMERS<span>.</span>
+    </div>
+
+    <div>
+      Demo website concept • 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>
